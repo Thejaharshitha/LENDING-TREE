@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Account.Models.AgentRegister>
+@{
+    ViewBag.Title = "ViewAUdetails";
+
+}
+
+<h2>View Agent User details</h2>
+
+<table border="1">
+    <tr>
+        <th style="text-align:center;">First Name</th>
+        <th style="text-align:center;">Last Name</th>
+        <th style="text-align:center;">DOB</th>
+        <th style="text-align:center;">Gender</th>
+        <th style="text-align:center;">Contact Number</th>
+        <th style="text-align:center;">ID</th>
+        <th style="text-align:center;"> Password</th>
+        <th style="text-align:center;">DEPARTMENT</th>
+    </tr>
+
+    @foreach (var uinfo in @Model)
+    {
+        <tr>
+            <td>@uinfo.AgentFirstName</td>
+            <td>@uinfo.AgentLastName</td>
+            <td>@uinfo.AgentDoB</td>
+            <td>@uinfo.AgentGender</td>
+            <td>@uinfo.AgentContactNumber</td>
+            <td>@uinfo.AgentId</td>
+            <td>@uinfo.AgentPassword</td>
+            <td>@uinfo.Department</td>
+        </tr>
+    }
+</table>

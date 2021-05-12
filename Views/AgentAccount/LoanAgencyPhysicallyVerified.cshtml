@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Account.Models.Loan>
+
+@{
+    ViewBag.Title = "LoanAgencyPhysicallyVerified";
+}
+<button>@Html.ActionLink("BACK", "LoanAgencyAdminMainPage", "AgentAccount")</button>
+<br />
+<h2>New Loans PhysicallyVerified By Pickup Department</h2>
+
+<table class="table">
+    <tr>
+        <th>Loan Id</th>
+        <th>User Id</th>
+        <th>Update Status</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(i => item.LoanId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "LoanAgencyPhysicallyVerifiedShowLoanDetails", new { loanid = item.LoanId })
+            </td>
+        </tr>
+    }
+</table>

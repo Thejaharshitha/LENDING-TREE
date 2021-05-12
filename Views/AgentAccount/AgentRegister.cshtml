@@ -1,0 +1,71 @@
+﻿@model Account.Models.AgentRegister
+@{
+    ViewBag.Title = "AgentRegister";
+
+}
+
+<h2>AgentRegister</h2>
+<div>
+    @using (Html.BeginForm("SaveAgentRegisterDetails", "AgentAccount"))
+    {
+
+        <div class="row">
+            <!--Show details are saved successfully message-->
+            <div class="col-lg-12">@ViewBag.Message</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.AgentFirstName)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.AgentFirstName, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.AgentFirstName, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.AgentLastName)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.AgentLastName, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.AgentLastName, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.AgentDoB)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.AgentDoB, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.AgentDoB, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.AgentGender)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.AgentGender, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.AgentGender, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.AgentContactNumber)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.AgentContactNumber, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.AgentContactNumber, "", new { @class = "text-danger" })</div>
+        </div><br />
+
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.AgentId)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.AgentId, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.AgentId, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.AgentPassword)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.AgentPassword, new { @class = "form-control", type = "Password" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.AgentPassword, "", new { @class = "text-danger" })</div>
+        </div><br />
+
+  
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.Department)</div>
+
+            <div class="col-lg-10">
+                @Html.DropDownList("Department", new List<SelectListItem>
+                {
+
+                   new SelectListItem {Text ="Pickup",Selected = true },
+                   new SelectListItem {Text ="Verification" },
+                   new SelectListItem {Text ="Legal" }   
+               })
+            </div>
+
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.Department, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <input type="submit" value="Register" class="btn btn-primary" />
+    }
+</div>

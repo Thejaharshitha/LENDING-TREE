@@ -1,0 +1,27 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "LoanAgencyVerifiedMappingEmployee";
+}
+
+<h2>Legal Department Employees with less than 3 Assignments</h2>
+
+<table class="table">
+    <tr>
+        <th>Employee Id</th>
+        <th>Map</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.Label(item)
+            </td>
+            <td>
+                @*// send gentid to mapped*@
+                @Html.ActionLink("Map", "LoanAgencyVerifiedMap", new { agentid = item })
+            </td>
+        </tr>
+    }
+</table>

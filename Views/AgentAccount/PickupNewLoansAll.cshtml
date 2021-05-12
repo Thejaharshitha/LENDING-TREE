@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Account.Models.Loan>
+
+@{
+    ViewBag.Title = "PickupNewLoansAll";
+}
+
+<h2>New Loans for Physical Verification</h2>
+
+<table class="table">
+    <tr>
+        <th>Loan Id</th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>Update Status</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(i => item.LoanId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "PickupLoanDetails", new { loanid = item.LoanId, loantype = item.LoanType })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@if (Request.IsAuthenticated)
+{
+    <span>WELCOME @Html.Encode(User.Identity.Name)</span>
+
+    }
+else
+{
+<h3>WELCOME TO LENDING TREE APPLICATION</h3>
+}

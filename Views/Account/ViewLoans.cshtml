@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Account.Models.Loan>
+
+@{
+    ViewBag.Title = "ViewLoans";
+}
+
+<h2>My Loans</h2>
+
+<table class="table">
+    <tr>
+        <th>Loan Id</th>
+        <th>Loan Type</th>
+        <th>Loan Amount</th>
+        <th>Check Status</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(i => item.LoanId)
+            </td>
+            <td>
+                @Html.DisplayFor(i => item.LoanType)
+            </td>
+            <td>
+                @Html.DisplayFor(i => item.LoanAmount)
+            </td>
+            <td>
+                @Html.ActionLink("Status", "LoanStatus", new { loanid = item.LoanId })
+            </td>
+        </tr>
+    }
+</table>

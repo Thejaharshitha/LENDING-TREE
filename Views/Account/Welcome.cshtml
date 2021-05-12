@@ -1,0 +1,12 @@
+﻿@model Account.Models.LoginViewModel
+@{
+    ViewBag.Title = "Welcome";
+
+}
+
+<h2>Welcome to the Lending Tree @Model.UserId</h2>
+<br />
+<br />
+
+<button class="btn btn-info" style="background-color:white">@Html.ActionLink("Apply Loan", "ApplyLoan", "Account")</button>
+<button class="btn btn-info" style="background-color:white">@Html.ActionLink("Loan Status", "ViewLoans", "Account")</button>

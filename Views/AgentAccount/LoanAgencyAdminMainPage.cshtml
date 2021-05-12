@@ -1,0 +1,16 @@
+﻿@model Account.Models.LoanAgencyAdmin
+@{
+    ViewBag.Title = "NewRequest";
+
+}
+<br />
+<button class="btn btn-info" style="background-color:whitesmoke; width:400px;">@Html.ActionLink("New Loans", "LoanAgencyAdminNewLoans", "AgentAccount")</button>
+<br />
+<br />
+<button class="btn btn-info" style="background-color:whitesmoke; width:400px;">@Html.ActionLink("Physically Verified Loans", "LoanAgencyPhysicallyVerified", "AgentAccount")</button>
+<br />
+<br />
+<button class="btn btn-info" style="background-color:whitesmoke; width:400px;">@Html.ActionLink("Verified Loans", "LoanAgencyVerified", "AgentAccount")</button>
+<br />
+<br />
+<button class="btn btn-info" style="background-color:whitesmoke; width:400px;">@Html.ActionLink("Legally Verified Loans", "LoanAgencyLegallyVerified", "AgentAccount")</button>

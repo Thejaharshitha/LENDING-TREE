@@ -1,0 +1,58 @@
+﻿@model Account.Models.Register
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+<div>
+    @using (Html.BeginForm("SaveRegisterDetails", "Account"))
+    {
+
+        <div class="row">
+            <!--Show details are saved successfully message-->
+            <div class="col-lg-12" style="color:red;">@ViewBag.Message</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.FirstName)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.LastName)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.LastName, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.DoB)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.DoB, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.DoB, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.Gender)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.Gender, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.Gender, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.ContactNumber)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.ContactNumber, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.ContactNumber, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.Email)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.Email, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger", Type = "email" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.UserId)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.UserId, new { @class = "form-control" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.UserId, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(a => a.Password)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "Password" })</div>
+            <div class="col-lg-10" style="color:red;">@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })</div>
+        </div><br />
+        <input type="submit" value="Register" class="btn btn-primary" />
+    }
+</div>

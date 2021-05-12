@@ -1,0 +1,34 @@
+﻿@model Account.Models.Loan
+@{
+    ViewBag.Title = "ShowLoanDetails";
+
+}
+
+<h2>ShowLoanDetails</h2>
+<table>
+    <tr>
+        <th>UserId</th>
+        <th>:</th>
+        <td>@Model.UserId</td>
+    </tr>
+    <tr>
+        <th>Occupation</th>
+        <th>:</th>
+        <td>@Model.Occupation</td>
+    </tr>
+    <tr>
+        <th>Loan Type</th>
+        <th>:</th>
+        <td>@Model.LoanType</td>
+    </tr>
+    <tr>
+        <th>Anuual Income</th>
+        <th>:</th>
+        <td>   @Model.AnnualIncome</td>
+    </tr>
+    <tr>
+        <th>Loan Amount</th>
+        <th>:</th>
+        <td>@Model.LoanAmount</td>
+    </tr>
+</table>

@@ -1,0 +1,76 @@
+﻿@model Account.Models.Loan
+@{
+    ViewBag.Title = "ShowLoanDetails";
+}
+
+@if (ViewBag.approvemsg != null)
+{
+    <h3>@ViewBag.approvemsg</h3>
+    <br />
+    <td>
+        <button class="btn btn-info" style="background-color:whitesmoke">@Html.ActionLink("BACK", "NewLoans", "AgentAccount")</button>
+    </td>
+}
+else
+{
+    <h2>Loan Details</h2>
+    using (Html.BeginForm("approve", "AgentAccount"))
+    {
+        <table>
+            <tr>
+                <td>User Id</td>
+                <td>:</td>
+                <td>@Html.DisplayFor(x => x.UserId)</td>
+
+            </tr>
+            <tr>
+                <td>Occupation</td>
+                <td>:</td>
+                <td>@Html.DisplayFor(x => x.Occupation)</td>
+            </tr>
+            <tr>
+                <td>Loan Type</td>
+                <td>:</td>
+                <td>@Html.DisplayFor(x => x.LoanType)</td>
+            </tr>
+            <tr>
+                <td>Annual Income</td>
+                <td>:</td>
+                <td>@Html.DisplayFor(x => x.AnnualIncome)</td>
+            </tr>
+            <tr>
+                <td>Loan Amount</td>
+                <td>:</td>
+                <td>@Html.DisplayFor(x => x.LoanAmount)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Approve" /></td>
+            </tr>
+        </table>
+    }
+
+    using (Html.BeginForm("disapprove", "AgentAccount"))
+    {
+        <table>
+            <tr>
+                <td>@Html.HiddenFor(x => x.UserId)</td>
+            </tr>
+            <tr>
+                <td>@Html.HiddenFor(x => x.Occupation)</td>
+            </tr>
+            <tr>
+                <td>@Html.HiddenFor(x => x.LoanType)</td>
+            </tr>
+            <tr>
+                <td>@Html.HiddenFor(x => x.AnnualIncome)</td>
+            </tr>
+            <tr>
+                <td>@Html.HiddenFor(x => x.LoanAmount)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Disapprove" /></td>
+            </tr>
+        </table>
+    }
+}

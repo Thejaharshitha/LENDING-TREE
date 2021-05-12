@@ -1,0 +1,9 @@
+﻿@model Account.Models.AgentLogin
+@{
+    ViewBag.Title = "LegalNewLoans";
+
+}
+
+<h2>Welcome @Model.AgentUserId</h2>
+
+<button class="btn btn-info" style="background-color:whitesmoke">@Html.ActionLink("New Loans", "LegalNewLoansAll", "AgentAccount")</button>

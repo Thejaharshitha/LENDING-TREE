@@ -1,0 +1,33 @@
+﻿@model List<Account.Models.Register>
+@{
+    ViewBag.Title = "ViewUdetails";
+
+}
+
+<h2>User details</h2>
+<table border="1">
+    <tr>
+        <th style="text-align:center;">First Name</th>
+        <th style="text-align:center;">Last Name</th>
+        <th style="text-align:center;">DOB</th>
+        <th style="text-align:center;">Gender</th>
+        <th style="text-align:center;">Contact Number</th>
+        <th style="text-align:center;">Email</th>
+        <th style="text-align:center;">User ID</th>
+        <th style="text-align:center;">Password</th>
+        </tr>
+
+        @foreach (var uinfo in @Model)
+        {
+            <tr>
+            <td>@uinfo.FirstName</td>
+            <td>@uinfo.LastName</td>
+            <td>@uinfo.DoB</td>
+            <td>@uinfo.Gender</td>
+            <td>@uinfo.ContactNumber</td>
+            <td>@uinfo.Email</td>
+            <td>@uinfo.UserId</td>
+            <td>@uinfo.Password</td>
+           </tr>
+        }
+</table>

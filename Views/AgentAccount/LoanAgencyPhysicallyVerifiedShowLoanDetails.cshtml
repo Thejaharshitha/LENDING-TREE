@@ -1,0 +1,36 @@
+﻿@model Account.Models.Loan
+@{
+    ViewBag.Title = "LoanAgencyPhysicallyVerifiedShowLoanDetails";
+}
+<h2>Loan Details</h2>
+
+<table>
+    <tr>
+        <td>User Id</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(x => x.UserId)</td>
+    </tr>
+    <tr>
+        <td>Occupation</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(x => x.Occupation)</td>
+    </tr>
+    <tr>
+        <td>Loan Type</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(x => x.LoanType)</td>
+    </tr>
+    <tr>
+        <td>Annual Income</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(x => x.AnnualIncome)</td>
+    </tr>
+    <tr>
+        <td>Loan Amount</td>
+        <td>:</td>
+        <td>@Html.DisplayFor(x => x.LoanAmount)</td>
+    </tr>
+    <tr>
+        <td>@Html.ActionLink("Map to Employee", "LoanAgencyPhysicallyVerifiedMappingEmployee", new { loanid = Model.LoanId })</td>
+    </tr>
+</table>
